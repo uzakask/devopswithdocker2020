@@ -1,0 +1,24 @@
+uzakask@uzakask-TP500LAG:~$ mkdir Dockerfile1.6
+uzakask@uzakask-TP500LAG:~$ touch Dockerfile
+uzakask@uzakask-TP500LAG:~$ cd Dockerfile1.6/
+uzakask@uzakask-TP500LAG:~/Dockerfile1.6$ touch Dockerfile
+uzakask@uzakask-TP500LAG:~/Dockerfile1.6$ nano Dockerfile 
+uzakask@uzakask-TP500LAG:~/Dockerfile1.6$ docker build -t docker-clock .
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM devopsdockeruh/overwrite_cmd_exercise
+ ---> 3d2b622b1849
+Step 2/2 : CMD ["/bin/bash"]
+ ---> Running in 8fee66e445e2
+Removing intermediate container 8fee66e445e2
+ ---> ea1dd1ab7f57
+Successfully built ea1dd1ab7f57
+Successfully tagged docker-clock:latest
+uzakask@uzakask-TP500LAG:~/Dockerfile1.6$ docker run -it docker-clock -c
+1
+2
+3
+4
+5
+6
+7
+^Cuzakask@uzakask-TP500LAG:~/Dockerfile1.6$
