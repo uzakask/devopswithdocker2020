@@ -1,0 +1,30 @@
+Secret message is:
+"Docker is easy"
+
+zakask@uzakask-TP500LAG:~$ docker run -d devopsdockeruh/exec_bash_exercise
+b453b08096a7177012b82b0bdb7b1b93a6eccfba5f15938e85367c0799db41ca
+uzakask@uzakask-TP500LAG:~$ docker container ls -a
+CONTAINER ID   IMAGE                               COMMAND                  CREATED              STATUS                       PORTS     NAMES
+b453b08096a7   devopsdockeruh/exec_bash_exercise   "docker-entrypoint.s…"   About a minute ago   Up About a minute                      sharp_keldysh
+uzakask@uzakask-TP500LAG:~$ docker exec -it sharp_keldysh bash
+root@b453b08096a7:/usr/app# tail -f ./logs.txt
+Secret message is:
+"Docker is easy"
+Thu, 24 Dec 2020 20:04:33 GMT
+Thu, 24 Dec 2020 20:04:36 GMT
+Thu, 24 Dec 2020 20:04:39 GMT
+Thu, 24 Dec 2020 20:04:42 GMT
+Secret message is:
+"Docker is easy"
+Thu, 24 Dec 2020 20:04:48 GMT
+Thu, 24 Dec 2020 20:04:51 GMT
+Thu, 24 Dec 2020 20:04:54 GMT
+Thu, 24 Dec 2020 20:04:57 GMT
+Secret message is:
+"Docker is easy"
+Thu, 24 Dec 2020 20:05:03 GMT
+exit
+Thu, 24 Dec 2020 20:05:06 GMT
+^C
+root@b453b08096a7:/usr/app# ^C
+root@b453b08096a7:/usr/app# 
