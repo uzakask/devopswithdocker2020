@@ -1,0 +1,2 @@
+uzakask@uzakask-TP500LAG:~/dockerfile1.10$ docker build -t 1.10 .
+uzakask@uzakask-TP500LAG:~/dockerfile1.10$ docker run -p 5000:5000 1.10
