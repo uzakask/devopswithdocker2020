@@ -1,0 +1,2 @@
+docker build -t 1.14 .
+docker run -p 3000:3000 1.14
