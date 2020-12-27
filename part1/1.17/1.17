@@ -1,2 +1,2 @@
-Python3 enviroment with sympy library.
+Python3 enviroment with sympy library. to run: docker run -it uzakask/pythonwithsympy
 dockerhub url of image: https://hub.docker.com/r/uzakask/pythonwithsympy
