@@ -1,0 +1,33 @@
+version: "3.5"
+services:
+  frontend:
+    image: frontendalpine:alpine
+    ports:
+      - 5000:5000
+  backend:
+    image: backendalpine:alpine
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+    environment:
+      - REDIS=redis
+      - DB_USERNAME=user123
+      - DB_PASSWORD=password123
+      - DB_HOST=postgres
+  redis:
+    image: redis
+  
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: user123
+      POSTGRES_PASSWORD: password123
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf    
+    depends_on:
+      - backend
