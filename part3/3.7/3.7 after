@@ -1,0 +1,18 @@
+FROM ruby:2.6.0
+WORKDIR /home 
+RUN apt-get update && apt-get install -y git curl nodejs && \
+    git clone https://github.com/docker-hy/rails-example-project . && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash && \
+    apt-get purge -y --auto-remove curl git && \
+    rm -rf /var/lib/apt/lists/* && \
+    useradd -m app && \
+    chown -R app /home
+
+USER app
+RUN gem install bundler && \
+    bundle install && \
+    rails db:migrate && \
+    gem uninstall bundler
+
+EXPOSE 3000
+CMD rails s
